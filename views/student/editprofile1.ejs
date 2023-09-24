@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-CfhOTIaTQ6UACsn6UaD6Ia38klxNRmz0iJfTmJKzTki0lTUDrOgzrZbq3mX9ygI+RCmR8hxOg6BcdD2B2LKVHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Sidenav bar */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      /* Sidenav links */
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f1f1f1;
+        display: block;
+      }
+      /* Sidenav active link */
+      .active {
+        background-color: #4caf50;
+        color: white;
+      }
+      /* Main content */
+      .main {
+        margin-left: 200px; /* Same width as the sidebar */
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidenav bar -->
+    <div class="sidenav">
+      <a href="#" class="active"><i class="fas fa-users"></i> Profile</a>
+      <a href="/user/home"><i class="fas fa-tasks"></i> Back </a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <h1>Profile</h1>
+      <hr />
+      <div class="main">
+       <form action="/user/edit" method="post">
+    <h2>Personal Information</h2>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <input type="hidden" value="<%= user.profile._id%>" name="id"/></input>
+        <label for="fname">Frist Name:</label>
+        <input type="text" class="form-control" id="fname" value="<%=user.profile.firstname%>" placeholder="Enter Frist Name" name="firstname" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="mname">Middle Name:</label>
+        <input type="text" class="form-control" id="mname"  value="<%=user.profile.middlename%>"placeholder="Enter Middle Name" name="middlename" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="lname">Last Name:</label>
+        <input type="text" class="form-control" id="lname" value="<%=user.profile.lastname%>" placeholder="Enter Last Name" name="lastname" required>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" value="<%=user.profile.email%>" placeholder="Enter email" name="email" required>
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" class="form-control" id="mobile" value="<%=user.profile.mobile%>" placeholder="Enter mobile number" name="mobile_number" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="branch">Branch:</label>
+        <input type="text" class="form-control" id="branch" value="<%=user.profile.branch%>" placeholder="Enter branch"name="Branch" required>
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" class="form-control" id="dob" value="<%=user.profile.dob%>" placeholder="Enter date of birth" name="date_of_birth" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="nationality">Nationality:</label>
+        <input type="text" class="form-control" id="nationality" value="<%=user.profile.nationality%>" placeholder="Enter nationality" name="nationality" required>
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="Address">Address:</label>
+        <input type="text" class="form-control" id="Address" value="<%=user.profile.per_add%>" placeholder="Address" name="per" required>
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="cast">Cast:</label>
+        <input type="text" class="form-control" id="cast" value="<%=user.profile.cast%>" placeholder="Enter cast" name="cast" required>
+      </div>
+    </div>
+    
+    <h2>Academic Information</h2>
+    <hr>
+    <h3>SSC Information</h3>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label for="ssc-percentage">SSC Percentages:</label>
+        <input type="number" class="form-control" id="ssc-percentage" value="<%=user.profile.tenth_percetage%>" placeholder="Enter SSC percentage" name="tenth_percentage" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="ssc-passing-year">SSC Passing Year:</label>
+        <input type="text" class="form-control" id="ssc-passing-year" value="<%=user.profile.school_passing_year%>" placeholder="Enter SSC passing year" name="school_passing_year" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="ssc-school">SSC School:</label>
+        <input type="text" class="form-control" id="ssc-school" value="<%=user.profile.School_collge_name%>" placeholder="Enter SSC school name" name="school_collage_name" required>
+      </div>
+    </div>
+    <h3>HSC Information</h3>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label for="hsc-percentage">HSC Percentages:</label>
+        <input type="text" class="form-control" id="hsc-percentage" value="<%=user.profile.tweth_percentage%>" placeholder="Enter HSC percentage" name="tweth_percentage" >
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="hsc-passing-year">HSC Passing Year:</label>
+        <input type="text" class="form-control" id="hsc-passing-year" value="<%=user.profile.tweth_passing_year%>" placeholder="Enter HSC passing year" name="tweth_passing_year">
+</div>
+<div class="col-md-4 form-group">
+<label for="hsc-school">HSC School:</label>
+<input type="text" class="form-control" id="hsc-school" value="<%=user.profile.tweth_college_name%>" placeholder="Enter HSC school name" name="tweth_collage_name" >
+</div>
+</div>
+<h3>Diploma Information</h3>
+<div class="row">
+<div class="col-md-4 form-group">
+<label for="diploma-percentage">Diploma Percentages:</label>
+<input type="number" class="form-control" id="diploma-percentage" value="<%=user.profile.diploma_percentage%>" placeholder="Enter diploma percentage" name="diploma_percentage" >
+</div>
+<div class="col-md-4 form-group">
+<label for="diploma-branch">Diploma Branch:</label>
+<input type="text" class="form-control" id="diploma-branch" value="<%=user.profile.diploma_branch%>" placeholder="Enter diploma branch" name="diploma_branch" >
+</div>
+<div class="col-md-4 form-group">
+<label for="diploma-passing-year">Diploma Passing Year:</label>
+<input type="text" class="form-control" id="diploma-passing-year" value="<%=user.profile.diploma_passing_year%>" placeholder="Enter diploma passing year" name="diploma_passing_year" >
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 form-group">
+<label for="diploma-college-name">Diploma College Name:</label>
+<input type="text" class="form-control" id="diploma-college-name" value="<%=user.profile.diploma_college_name%>" placeholder="Enter diploma college name" name="diploma_collage_name" >
+</div>
+</div>
+<h3>B.E Information</h3>
+<div class="row">
+</div>
+<div class="row">
+  <div class="col-md-6 form-group">
+    <label for="first-sem-percentage">First Sem Percentage:</label>
+    <input type="number" class="form-control" id="first-sem-percentage" value="<%=user.profile.first_sem%>" placeholder="Enter first sem percentage" name="first_sem" >
+  </div>
+  <div class="col-md-6 form-group">
+    <label for="second-sem-percentage">Second Sem Percentage:</label>
+    <input type="number" class="form-control" id="second-sem-percentage" value="<%=user.profile.secound_sem%>" placeholder="Enter second sem percentage" name="second_sem" >
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 form-group">
+    <label for="third-sem-percentage">Third Sem Percentage:</label>
+    <input type="number" class="form-control" id="third-sem-percentage" value="<%=user.profile.third_sem%>" placeholder="Enter third sem percentage" name="third_sem" >
+  </div>
+  <div class="col-md-6 form-group">
+    <label for="fourth-sem-percentage">Fourth Sem Percentage:</label>
+    <input type="number" class="form-control" id="fourth-sem-percentage" value="<%=user.profile.forth_sem%>" placeholder="Enter fourth sem percentage" name="forth_sem"> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 form-group">
+    <label for="fifth-sem-percentage">Fifth Sem Percentage:</label>
+    <input type="number" class="form-control" id="fifth-sem-percentage" value="<%=user.profile.fifth_sem%>" placeholder="Enter fifth sem percentage" name="fifth_sem" >
+  </div>
+   <div class="col-md-6 form-group">
+    <label for="sixth-sem-percentage">Sixth Sem Percentage:</label>
+    <input type="number" class="form-control" id="sixth-sem-percentage" value="<%=user.profile.sixth_sem%>" placeholder="Enter Sixth sem percentage" name="sixth_sem" >
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 form-group">
+    <label for="seventh-sem-percentage">Seventh Sem Percentage:</label>
+    <input type="number" class="form-control" id="seventh-sem-percentage" value="<%=user.profile.seventh_sem%>" placeholder="Enter seventh-sem-percentage" name="seventh_sem" >
+  </div>
+  <div class="col-md-6 form-group">
+    <label for="eigth-sem-percentage">Eight Sem Percentage:</label>
+    <input type="number" class="form-control" id="eigth-sem-percentage" value="<%=user.profile.eight_sem%>" placeholder="Enter Eight sem percentage" name="eight_sem" >
+  </div>
+  <div class="col-md-6 form-group">
+    <label for="agg-percentage">Aggregate Percentage:</label>
+    <input type="number" class="form-control" id="agg-percentage" value="<%=user.profile.total_percentage%>" placeholder="Enter Aggregate Percentage"required name="average_percentage" >
+  </div>
+</div>
+ <h2>Other Information</h2>
+  <div class="form-group">
+    <label for="achievement">Achievement:</label>
+    <textarea class="form-control" id="achievement" rows="3" placeholder="Enter achievement" name="achive_particpant" ><%=user.profile.achive_particpant%></textarea>
+  </div>
+  <div class="form-group">
+    <label for="other-info">Other Information About You:</label>
+    <textarea class="form-control" id="other-info" rows="3" placeholder="Enter other information" name="info" ><%=user.profile.info%></textarea>
+  </div>
+  <div class="text-center mt-3">
+  <button type="submit" class="btn btn-success">Update</button>
+</div>
+</form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

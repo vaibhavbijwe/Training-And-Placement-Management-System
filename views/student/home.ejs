@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+  </head>
+  <body>
+    <h1>welcome <%= user.fristname %></h1>
+
+    <table>
+      <tr>
+        <td>
+          <img
+            src=""
+            width=/userimg/<%= user.image %>"100px"
+            height="100px"
+            alt="<%= user.image %>"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= user.email %></td>
+      </tr>
+      <tr>
+        <td>Fristname</td>
+        <td><%= user.fristname %></td>
+      </tr>
+      <tr>
+        <td>Lastname</td>
+        <td><%= user.lastname %></td>
+      </tr>
+    </table>
+    <a href="/user/profile?id=<%=user.id %> ">profile</a>
+    <a href="/user/edit?id=<%=user.id %> ">edit</a>
+    <br />
+    <a href="/user/logout">Logout</a>
+  </body>
+</html>

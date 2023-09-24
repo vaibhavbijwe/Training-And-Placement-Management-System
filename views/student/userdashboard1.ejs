@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-CfhOTIaTQ6UACsn6UaD6Ia38klxNRmz0iJfTmJKzTki0lTUDrOgzrZbq3mX9ygI+RCmR8hxOg6BcdD2B2LKVHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Sidenav bar */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      /* Sidenav links */
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f1f1f1;
+        display: block;
+      }
+      /* Sidenav active link */
+      .active {
+        background-color: #4caf50;
+        color: white;
+      }
+      /* Main content */
+      .main {
+        margin-left: 200px; /* Same width as the sidebar */
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidenav bar -->
+    <div class="sidenav">
+      <div class="sidenav">
+        <a href="#" class="active"><i class="fas fa-users"></i>Dashboard</a>
+        <a href="/user/profile"><i class="fas fa-users"></i>Create Profile</a>
+        <a href="/user/edit/<%=user.id %>"><i class="fas fa-users"></i>Edit Profile</a>
+        <a href="/user/showregcampus"><i class="fas fa-users"></i>Registred Campus</a>
+        <a href="/user/setting/<%=user.id %>"><i class="fas fa-users"></i>Settings</a>
+        <a href="/user/logout"><i class="fas fa-users"></i>Logout</a>
+      </div>
+    </div>
+    <!-- Main content -->
+    <div class="main">
+      <h3>Student Dashboard</h3>
+      <hr>
+      <div class="container mt-1">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                User Profile
+              </div>
+              <div class="card-body">
+                <img src="/userimg/<%= user.image %>" class="img-fluid mb-3" alt="User Profile Picture">
+                <h5 class="card-title"><%=user.fristname%> <%=user.lastname%></h5>
+                <p class="card-text">Email: <%=user.email%> </p>
+                <p class="card-text">Phone:<%=user.mobile%></p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header bg-success text-white">
+                Campus Avaliable
+              </div>
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Company Name</th>
+                      <th>Job Title</th>
+                      <th>Campus Details</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% 
+            if(campus.length>0){
+              for(let i=0;i < campus.length; i++){
+                %>
+                <tr>
+                  <td><%=campus[i].company%></td>
+                  <td><%=campus[i].jobTitle%></td>
+                  <td><a href="/user/showcampusdetail/<%=campus[i]._id%>" class="btn btn-sm btn-success">Campus Details</a></td>
+                  <td><a href="/user/registercampus/<%=campus[i]._id%>" class="btn btn-sm btn-default">Register</a></td>
+                  
+                </tr>
+                
+                <%
+              }
+            }else{
+              %>
+              <tr><td>Campus Not posted yet</td></tr>
+              
+              <%
+            }
+          %>
+                  </tbody>
+                  </table>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+      
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

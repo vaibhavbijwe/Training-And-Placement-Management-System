@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit campus</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-CfhOTIaTQ6UACsn6UaD6Ia38klxNRmz0iJfTmJKzTki0lTUDrOgzrZbq3mX9ygI+RCmR8hxOg6BcdD2B2LKVHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Sidenav bar */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      /* Sidenav links */
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f1f1f1;
+        display: block;
+      }
+      /* Sidenav active link */
+      .active {
+        background-color: #4caf50;
+        color: white;
+      }
+      /* Main content */
+      .main {
+        margin-left: 200px; /* Same width as the sidebar */
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidenav bar -->
+    <div class="sidenav">
+       <a href="#" class="active"><i class="fas fa-users"></i> Edit Campus</a>
+      <a href="/admin/showcampus"><i class="fas fa-tasks"></i> Back </a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <h1>Edit Campus Details</h1>
+      <hr />
+      <div class="main">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h2>Campus Placement Form</h2>
+      <form action="/admin/editcampus/<%=campusdetails._id%>" method="post">
+
+    <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="company_name">Company Name:</label>
+        <input type="text" class="form-control" id="company_name" placeholder="Enter company name" name="company_name" value="<%=campusdetails.company%>" required>
+      </div>
+    
+    </div>
+     <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="jobtitle">Job Title:</label>
+        <input type="text" class="form-control" id="jobtitle" placeholder="Enter Job Title" name="job_title" value="<%=campusdetails.jobTitle%>" required>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="joblocation">Job Location:</label>
+        <input type="text" class="form-control" id="joblocation" placeholder="Enter Job Location" name="job_loc" value="<%=campusdetails.joblocation%>" required>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="batch">Batch:</label>
+        <input type="text" class="form-control" id="batch" placeholder="Enter batch" name="batch" value="<%=campusdetails.batch%>" required>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="ctc">CTC:</label>
+        <input type="text" class="form-control" id="ctc" placeholder="Enter CTC" name="job_ctc" value="<%=campusdetails.ctc%>" required>
+      </div>
+   </div>
+    <div class="form-group">
+    <label for="jobdiscriptions">Job Description:</label>
+    <textarea class="form-control" id="jobdiscriptions" rows="3" placeholder="Enter job Discriptions" name="job_dec" ><%=campusdetails.description%></textarea>
+  </div>
+  
+  <div class="text-center mt-3">
+  <button type="submit" class="btn btn-success">Update</button>
+</div>
+</form>
+    </div>
+  </div>
+</div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

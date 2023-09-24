@@ -1,0 +1,22 @@
+body{
+	font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+/*navbar*/
+nav{
+	background-color: #fff!important;
+	box-shadow: 1rem 1rem 2rem #4444;
+
+}
+
+nav .navbar-brand{
+	color: var(--bs-black)!important;
+}
+
+.navbar-toggler{
+	outline: none!important;
+	padding: none!important;
+}
+
+

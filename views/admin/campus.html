@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .signup {
+            margin: auto;
+            width: 100%;
+            padding: 70px;
+            padding-left:10%;
+        }
+    </style>
+  </head>
+    <title>Campus</title>
+  </head>
+  <body>
+    <h1 style="text-align:center">Create Campus</h1>
+    <div class="signup">
+        <div class="container">
+        <div class="card ">            
+            <div class="card-header">Campus Form</div>    
+            <div class="card-body">
+                <form action="/admin/create-campus" method="POST">
+                    <div class="mb-3">
+                        <label for="name-reg" class="form-label">Company Name</label>
+                        <input type="text" class="form-control"  placeholder="Company Name" name="companyname">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="name-reg" class="form-label">Job Title:</label>
+                        <input type="text" class="form-control" placeholder="Job Title" name="jobtitle">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="email-reg" class="form-label">Job Description:</label>
+                        <textarea class="form-control" id="jobDescription" rows="3"></textarea>                       
+                    </div>
+                    <div class="mb-3">
+                        <label for="jobLocation">Job Location:</label>
+                        <input type="text" class="form-control" id="jobLocation" placeholder="Enter job location">
+                    </div>  
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="/admin/home">
+                        <button type="button" class="btn btn-link">back</button></a>
+                   
+                </form>
+                
+      
+        
+    
+            </div>
+        </div>
+    </div>
+     
+        </div>
+
+       
+        
+  </body>
+</html>

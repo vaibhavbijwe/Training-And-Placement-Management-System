@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-CfhOTIaTQ6UACsn6UaD6Ia38klxNRmz0iJfTmJKzTki0lTUDrOgzrZbq3mX9ygI+RCmR8hxOg6BcdD2B2LKVHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Sidenav bar */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      /* Sidenav links */
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f1f1f1;
+        display: block;
+      }
+      /* Sidenav active link */
+      .active {
+        background-color: #4caf50;
+        color: white;
+      }
+      /* Main content */
+      .main {
+        margin-left: 200px; /* Same width as the sidebar */
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidenav bar -->
+    <div class="sidenav">
+      <a href="#" class="active"><i class="fas fa-users"></i> Profile</a>
+      <a href="/admin/showstudent"><i class="fas fa-tasks"></i> Back </a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <h1>Profile</h1>
+      <hr />
+      <div class="main">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Personal Information</h3>
+            <p>
+              <strong>Name:</strong>
+              <span>
+                <%= profile.firstname +" "+profile.middlename +" "+profile.lastname%>
+              </span>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <span> <%= profile.email%> </span>
+            </p>
+            <p><strong>Mobile Number:</strong> <span> <%= profile.mobile%></span></p>
+            <p><strong>Branch:</strong> <span> <%= profile.branch%> </span></p>
+            <p><strong>Date Of Birth:</strong> <span><%= profile.dob%></span></p>
+            
+            <p><strong>Nationality:</strong> <span></span><%= profile.nationality%></p>
+            <p><strong>Cast:</strong> <span></span><%= profile.cast%></p>
+            <hr>
+            <h3>Academic Information</h3>
+            <h4>SSC Information</h4>
+            <p><strong>SSC Percentages:</strong> <span></span><%= profile.tenth_percetage%>%</p>
+            <p><strong>SSC Passing Year:</strong> <span></span><%= profile.school_passing_year%></p>
+            <p><strong>SSC School:</strong> <span></span><%= profile.School_collge_name%></p>
+            <hr>
+            <h4>HSC Information</h4>
+            <p><strong>HSC Percentages:</strong> <span><%= profile.tweth_percentage%></span></p>
+            <p><strong>HSC Passing Year:</strong> <span><%= profile.tweth_passing_year%></span></p>
+            <p><strong>HSC School:</strong> <span><%=profile.tweth_college_name%></span></p> 
+            <hr>
+            <h4>Diploma Information</h4>
+            <p><strong>Diploma Percentages:</strong> <span></span><%= profile.diploma_percentage%>%</p>
+            <p><strong>Diploma Branch:</strong> <span></span><%= profile.diploma_branch%></p>
+            <p><strong>Diploma Passing Year:</strong> <span></span><%=  profile.diploma_passing_year%></p>
+            <p><strong>Diploma Collage Name:</strong> <span></span><%=  profile.diploma_college_name%></p>
+            <hr>
+            <h4>B.E Information</h4>
+            <p><strong>B.E Branch:</strong> <span></span><%=  profile.branch%></p>
+            <p><strong>First Sem Percentage:</strong> <span></span><%=profile.first_sem%></p>
+            <p><strong>Second Sem Percentage:</strong> <span></span><%=profile.secound_sem%></p>
+            <p><strong>Third Sem Percentage:</strong> <span></span><%=profile.third_sem%></p>
+            <p><strong>Fourth Sem Percentage:</strong> <span></span><%=profile.forth_sem%></p>
+            <p><strong>Fifth Sem Percentage:</strong> <span></span><%=profile.fifth_sem%></p>
+            <p><strong>Sixth Sem Percentage:</strong> <span></span><%=profile.sixth_sem%></p>
+            <p><strong>Seventh Sem Percentage:</strong> <span></span><%=profile.seventh_sem%></p>
+            <p><strong>Eight Sem Percentage:</strong> <span></span><%=profile.eight_sem%></p>
+            <p><strong>Aggregate Percentage:</strong> <span></span><%=profile.total_percentage%></p>
+            <h4>Other Information</h4>
+            <p><strong>Achievement</strong>:</strong> <span></span><%=profile.achive_particpant%></p>
+            <p><strong>Other Information About You </strong>:</strong> <span></span><%=profile.info%></p>
+
+
+
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

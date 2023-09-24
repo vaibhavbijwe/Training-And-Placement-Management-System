@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Detail</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-CfhOTIaTQ6UACsn6UaD6Ia38klxNRmz0iJfTmJKzTki0lTUDrOgzrZbq3mX9ygI+RCmR8hxOg6BcdD2B2LKVHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Sidenav bar */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      /* Sidenav links */
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f1f1f1;
+        display: block;
+      }
+      /* Sidenav active link */
+      .active {
+        background-color: #4caf50;
+        color: white;
+      }
+      /* Main content */
+      .main {
+        margin-left: 200px; /* Same width as the sidebar */
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidenav bar -->
+    <div class="sidenav">
+     <a href="#" class="active"><i class="fas fa-users"></i>Campus Details</a>
+      <a href="/user/home" ><i class="fas fa-users"></i>Back</a>
+
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <h1>Campus Information</h1>
+      <hr />
+      <div class="main">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+
+    <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="company_name">Company Name: <b><%=campusdetails.company%></b></label>
+        
+      </div>
+    
+    </div>
+     <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="jobtitle">Job Title:<b><%=campusdetails.jobTitle%></b></label>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="jobtitle">Job Location:<b><%=campusdetails.joblocation%></b></label>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="batch">Batch:<b><%=campusdetails.batch%></b></label>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-8 form-group">
+        <label for="ctc">CTC:<b><%=campusdetails.ctc%></b></label>
+        
+      </div>
+   </div>
+    <div class="form-group">
+    <label for="jobdiscriptions">Job Description:<p><b><%=campusdetails.description%></b></p></label>
+  </div>
+      <div class="form-group">
+    <label for="createdAt">Created At:<b><i><%=campusdetails.createdAt%></i></b></label>
+      </div>
+          <div class="form-group">
+    <label for="updatedAt">Updated At:<b><i><%=campusdetails.updatedAt%></b></i></label>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

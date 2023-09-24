@@ -1,0 +1,115 @@
+/* Variriables */
+:root {
+  --mainColor: #313030;
+  --secondayColor: darkgray;
+  --white: #ffffff;
+}
+/* Import Font */
+@font-face {
+  font-family: "Open Sans";
+  src: url("/font/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+/* Global Settings */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-color: #eee;
+}
+hr {
+  border: 1px solid rgba(236, 240, 241, 0.3);
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+/* Content Styling */
+main {
+  height: auto;
+  background-color: var(--white);
+  padding: 30px;
+  box-shadow: 0 0 2px #808080;
+  position: relative;
+  z-index: 100;
+}
+main h2 {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+/* Content Section === Checkout Page */
+main .application-form {
+  max-width: 600px;
+  padding: 10px;
+  margin: 0 auto;
+}
+/* Content main === Checkout Page === Checkout Items */
+main .application-form .application-form-detail {
+  width: 100%;
+}
+main .application-form .application-form-detail h4 {
+  display: block;
+  color: var(--secondayColor);
+  background-color: var(--mainColor);
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+form .form-group {
+  margin: 10px 5px;
+  width: calc(100% - 30px);
+}
+form label {
+  color: var(--mainColor);
+  display: block;
+  margin-bottom: 6px;
+}
+form .form-group input,
+form .form-group select,
+form .form-group textarea {
+  width: 100%;
+  padding: 8px 5px;
+  border: 1px solid var(--secondayColor);
+  outline: none;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 1px solid var(--secondayColor);
+  border: 1xp solid transparent;
+}
+form .form-inline {
+  display: flex;
+  justify-content: space-between;
+}
+form .form-inline.flex {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 10px;
+}
+form .form-inline.flex input {
+  width: unset;
+  margin-right: 10px;
+}
+form .form-inline .form-group {
+  width: 48%;
+}
+form button {
+  width: fit-content;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+form button:hover {
+  color: var(--white);
+}

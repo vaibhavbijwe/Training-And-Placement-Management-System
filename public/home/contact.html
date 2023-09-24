@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us | College Placement Cell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .contact-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #f7f7f7;
+      }
+
+      .contact-section h1 {
+        margin-top: 0;
+        font-size: 48px;
+      }
+
+      .contact-section p {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 5px #ddd;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        box-shadow: 0px 0px 10px #ddd;
+      }
+
+      .contact-form button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #0066cc;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" href="/">College Placement Cell</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="contact-section">
+      <h1>Contact Us</h1>
+      <p>
+        Have a question or comment? Get in touch with us using the form below.
+      </p>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <form class="contact-form" method="post" action="submit-form.php">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="subject" placeholder="Subject" required />
+
+            <textarea name="message" placeholder="Message" required></textarea>
+
+            <button type="submit" class="btn btn-primary btn-lg">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

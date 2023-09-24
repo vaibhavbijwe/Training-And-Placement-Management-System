@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Placement Cell</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Companies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+      </ul>
+    </div> -->
+  </nav>
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column ">
+            <div class="d-flex flex-column bd-highlight mb-3">
+                <div class="d-grid gap-3"></div>
+                
+            <li class="p-3 bd-highlight p-2 bg-dark border">
+              <a class="nav-link active" href="#">
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item p-3 bd-highlight p-2 bg-dark border">
+              <a class="nav-link" href="/admin/showcampus">
+               Campus
+              </a>
+            </li>
+             </li>
+             <li class="nav-item p-3 bd-highlight p-2 bg-dark border">
+              <a class="nav-link" href="/admin/addstudent/">
+                Add Student
+              </a>
+            </li>
+             <li class="nav-item p-3 bd-highlight p-2 bg-dark border">
+              <a class="nav-link" href="/admin/showstudent">
+               Students List
+              </a>
+            </li>
+
+            </li>
+             <li class="nav-item p-3 bd-highlight p-2 bg-dark border">
+              <a class="nav-link" href="/admin/editprofile/<%=user.id %>">
+                Edit Profile
+              </a>
+            </li>
+         
+            <li class="nav-item p-3 bd-highlight p-2 bg-dark border">
+              <a class="nav-link" href="#">
+                Settings
+              </a>
+            </li>
+        </li>
+        <li class="nav-item p-3 bd-highlight p-2 bg-dark  border">
+          <a class="nav-link" href="/admin/logout">
+            Logout
+          </a>
+        </li>
+          </ul>
+        </div>
+      </nav>
+
+  <div class="container mt-1">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            Admin Profile
+          </div>
+          <div class="card-body">
+            <img src="/userimg/<%= user.image %>" class="img-fluid mb-3" alt="User Profile Picture">
+            <h5 class="card-title"><%=user.fristname%> <%=user.lastname%></h5>
+            <p class="card-text">Email: <%=user.email%> </p>
+            <p class="card-text">Phone:<%=user.mobile%></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-success text-white">
+             Added Campus
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Company Name</th>
+                  <th>Job Title</th>
+                  <th>Campus Details</th>
+                  <th>Student Registered</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% 
+        if(campus.length>0){
+          for(let i=0;i < campus.length; i++){
+            %>
+            <tr>
+              <td><%=campus[i].company%></td>
+              <td><%=campus[i].jobTitle%></td>
+              <td><a href="/admin/showcampusdetail/<%=campus[i]._id%>">link</a></td>
+              
+            </tr>
+            
+            <%
+          }
+        }else{
+          %>
+          
+          <%
+        }
+      %>
+              </tbody>
+              </table>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </body>
+              </html>
+              
